@@ -1,0 +1,73 @@
+body {
+  background-color: black; /* Default light mode background */
+  color: white;
+}
+
+.all {
+  max-width: 1150px;
+  margin:auto;
+  padding: 10px 20px;
+  text-align: center
+}
+
+.navigation{
+  background: rgb(114, 114, 203);
+  padding: 10px 0px;
+  max-width: 1250px;
+  margin:auto
+}
+
+.navigation ul {
+  display: flex;
+  justify-content: space-between
+}
+
+.navigation ul li {
+  list-style: none;
+}
+
+.navigation ul li a{
+  color: white;
+  text-decoration: none;
+  font-size: x-large;
+  font-style: italic;
+  padding: 0px 20px
+}
+.navigation ul li a:hover{
+  color: rgb(190, 154, 154);
+  font-size: larger
+}
+
+.selecc{
+  background: rgb(125, 125, 245);
+  padding: 5px 0px;
+  max-width: 500px;
+  margin: auto
+}
+
+.selecc a{
+  color: white;
+}
+.selecc a:hover{
+  color: rgb(167, 55, 55)
+}
+
+.textimp{
+  background: rgb(186, 174, 174);
+  padding: 10px;
+  text-align: center
+}
+
+.bot{
+  background: rgb(105, 105, 191);
+  padding: 10px 15px;
+}
+
+.navegar ul li{
+  color: white;
+  text-decoration: none;
+  font-size: x-large;
+  font-style: italic;
+  padding: 0px 20px
+}
+  
