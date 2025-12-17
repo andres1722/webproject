@@ -16,3 +16,16 @@ class products(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Comment(models.Model):
+    product = models.ForeignKey(
+        products,
+        on_delete=models.CASCADE,
+        related_name="comments"
+    )
+    author = models.CharField(max_length=100)
+    text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Comentario de {self.author} en {self.product.title}"
