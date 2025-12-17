@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import product_detail  # <-- agregamos esta línea
 
 urlpatterns = [
     path('info/', views.info,name = 'info'),
@@ -9,7 +10,6 @@ urlpatterns = [
     path('create_store/',views.create_store,name ='create_store'),
     path('create_products/',views.create_products,name ='create_products'),
     path('contact/', views.contact, name='contact'),
-    path('details/<int:id>',views.details, name='details')
-   
-    
+    path('details/<int:id>',views.details, name='details'),
+    path('products/<int:id>/', product_detail, name='product_detail')  # <-- nueva ruta
 ]

@@ -11,4 +11,13 @@ class newproductform(forms.Form):
 
 class contactform(forms.Form):
     email = forms.CharField(label='EMail', max_length=100, widget=forms.TextInput(attrs={ 'class':'textimp'}))
-    
+from .models import Comment  # asegurate de tener esto al principio si no está
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['author', 'text']
+        widgets = {
+            'author': forms.TextInput(attrs={'placeholder': 'Tu nombre', 'class': 'textimp'}),
+            'text': forms.Textarea(attrs={'placeholder': 'Escribí tu comentario...', 'class': 'textimp'}),
+        }

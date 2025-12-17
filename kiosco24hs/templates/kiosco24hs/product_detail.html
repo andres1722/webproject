@@ -1,0 +1,20 @@
+<h2>{{ product.title }}</h2>
+<p>Precio: ${{ product.price }}</p>
+<p>Tienda: {{ product.store.name }}</p>
+
+<hr>
+<h3>Comentarios</h3>
+
+{% for comment in comments %}
+    <p><strong>{{ comment.author }}</strong>: {{ comment.text }}</p>
+{% empty %}
+    <p>No hay comentarios todavía.</p>
+{% endfor %}
+
+<hr>
+<h4>Dejá tu comentario:</h4>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enviar</button>
+</form>
