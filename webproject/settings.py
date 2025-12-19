@@ -26,7 +26,12 @@ SECRET_KEY = 'django-insecure-10y*@j_@3-@xci9b=a&h&oi&d4_j(!kq5#x=r#(_j6z^!3i@(8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["andres2023.pythonanywhere.com"]
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "andres2023.pythonanywhere.com"
+]
+
 
 
 # Application definition
@@ -77,7 +82,7 @@ WSGI_APPLICATION = 'webproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(os.path.dirname(BASE_DIR), 'db_sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db_sqlite3'),
     }
 }
 
@@ -106,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-ar'
 
-TIME_ZONE = TIME_ZONE = 'America/Argentina/Buenos_Aires'
+TIME_ZONE = 'America/Argentina/Buenos_Aires'
 
 USE_I18N = True
 
@@ -116,7 +121,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static')),
 
 MEDIA= 'media/'

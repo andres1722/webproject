@@ -6,7 +6,14 @@
 <h3>Comentarios</h3>
 
 {% for comment in comments %}
-    <p><strong>{{ comment.author }}</strong>: {{ comment.text }}</p>
+    <p>
+        <strong>{{ comment.author }}</strong>: {{ comment.text }}
+        |
+        <a href="{% url 'delete_comment' comment.id %}"
+           onclick="return confirm('¿Seguro que querés borrar este comentario?');">
+           🗑 Borrar
+        </a>
+    </p>
 {% empty %}
     <p>No hay comentarios todavía.</p>
 {% endfor %}
@@ -18,3 +25,6 @@
     {{ form.as_p }}
     <button type="submit">Enviar</button>
 </form>
+
+<hr>
+<a href="{% url 'products' %}">⬅ Volver a productos</a>

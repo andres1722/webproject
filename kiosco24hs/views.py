@@ -120,3 +120,9 @@ def product_detail(request, id):
     }
 
     return render(request, 'kiosco24hs/product_detail.html', context)
+
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    product_id = comment.product.id
+    comment.delete()
+    return redirect('product_detail', id=product_id)
